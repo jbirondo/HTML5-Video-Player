@@ -1,6 +1,6 @@
 const player = document.querySelector('.player')
 const video = player.querySelector('.viewer')
-const progess = player.querySelector('.progress')
+const progress = player.querySelector('.progress')
 const progessBar = player.querySelector('.progress__filled')
 const toggle = player.querySelector('.toggle')
 const skipButtons = player.querySelectorAll('[data-skip]')
@@ -34,7 +34,7 @@ function handleProgress() {
 }
 
 function scrub(e){
-    const scrubTime = (e.offsetX / progess.offsetWidth) * video.duration
+    const scrubTime = (e.offsetX / progress.offsetWidth) * video.duration
     video.currentTime = scrubTime
 }
 
@@ -51,7 +51,7 @@ ranges.forEach(range => range.addEventListener('change', handleRangeUpdate))
 ranges.forEach(range => range.addEventListener('mousemove', handleRangeUpdate))
 
 let mousedown = false
-progess.addEventListener('click', scrub)
+progress.addEventListener('click', scrub)
 progress.addEventListener('mousemove', (e) => mousedown && scrub(e))
-progess.addEventListener('mousedown', () => mousedown = true)
-progess.addEventListener('mouseup', () => mousedown = false)
+progress.addEventListener('mousedown', () => mousedown = true)
+progress.addEventListener('mouseup', () => mousedown = false)
