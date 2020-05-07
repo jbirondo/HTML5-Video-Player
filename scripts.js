@@ -8,16 +8,11 @@ const ranges = player.querySelectorAll('.player__slider')
 
 
 function togglePlay() {
-    if(video.paused){
-        video.play()
-    } else {
-        video.pause()
-    }
+    video.paused ? video.play() : video.pause()
 }
 
 function updateButton(){
-    const icon = this.paused ? '▶️' : '∥∥'
-    toggle.textContent = icon
+    toggle.textContent = this.paused ? '▶️' : '∥∥'
 }
 
 function skip(){
