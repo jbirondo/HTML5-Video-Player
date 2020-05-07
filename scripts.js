@@ -30,7 +30,8 @@ function handleRangeUpdate() {
 
 function handleProgress() {
     const percent = (video.currentTime / video.duration) * 100
-    progressBar.style.flexBasis = `${percent}`
+    console.log(progressBar.style.flexBasis)
+    progressBar.style.flexBasis = `${percent}%`
 }
 
 function scrub(e){
