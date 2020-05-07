@@ -50,4 +50,8 @@ skipButtons.forEach(button => button.addEventListener('click', skip))
 ranges.forEach(range => range.addEventListener('change', handleRangeUpdate))
 ranges.forEach(range => range.addEventListener('mousemove', handleRangeUpdate))
 
-progessBar.addEventListener('click', scrub)
+let mousedown = false
+progess.addEventListener('click', scrub)
+progress.addEventListener('mousemove', (e) => mousedown && scrub(e))
+progess.addEventListener('mousedown', () => mousedown = true)
+progess.addEventListener('mouseup', () => mousedown = false)
